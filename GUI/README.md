@@ -2,5 +2,5 @@
 Pythonを使ったGUIプログラムの作成。
 
 主に勉強するライブラリ:
-PySimpleGUI (https://pysimplegui.readthedocs.io/en/latest/)
-PySide2
+- PySimpleGUI (https://pysimplegui.readthedocs.io/en/latest/)
+- PySide2
