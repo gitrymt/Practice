@@ -18,7 +18,7 @@ function timedep_simple()
     k0 = 10
     ψ0 = zeros(ComplexF64, N)
     x0 = 5
-    @. ψ0 = (π*σ^2)^(-1/4)*exp(-(xs-x0)^2/(2σ^2)+im+k0*(xs-x0))
+    @. ψ0 = (π*σ^2)^(-1/4)*exp(-(xs-x0)^2/(2σ^2)+im*k0*(xs-x0))
     dx = (xs[2]-xs[1])/N
     V(x) = 0
     H = make_H(N,L,V)

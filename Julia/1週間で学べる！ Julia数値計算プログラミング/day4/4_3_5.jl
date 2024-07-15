@@ -46,7 +46,7 @@ function timeevolv(ψ,N,Nt,Δt,H::SparseMatrixCSC)
     return ψs
 end
 
-function timeevolv(ψ,N,Nt)
+function timedep_simple()
     anim = Animation()
     N = 4000
     L = 40.0
@@ -55,7 +55,7 @@ function timeevolv(ψ,N,Nt)
     k0 = 10
     ψ0 = zeros(ComplexF64, N)
     x0 = 5
-    @. ψ0 = (π*σ^2)^(-1/4)*exp(-(xs-x0)^2/(2σ^2)+im+k0*(xs-x0))
+    @. ψ0 = (π*σ^2)^(-1/4)*exp(-(xs-x0)^2/(2σ^2)+im*k0*(xs-x0))
     dx = (xs[2]-xs[1])/N
     V(x) = 0
     H = spzeros(Float64,N,N)
@@ -76,7 +76,7 @@ function timeevolv(ψ,N,Nt)
         println("$i-th: norm=$(norm(ψs[:,i])^2*dx)")
         frame(anim,plt)
     end
-    gif(anim,"./day4/4_3_2.gif",fps=30)
+    gif(anim,"./day4/4_3_5.gif",fps=30)
 end
 
 timedep_simple()
